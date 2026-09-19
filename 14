@@ -1,0 +1,31 @@
+14. VALID PALINDROME
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String s = sc.nextLine();
+
+        s = s.toLowerCase().replaceAll("[^a-z0-9]", "");
+
+        int left = 0;
+        int right = s.length() - 1;
+        boolean palindrome = true;
+
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                palindrome = false;
+                break;
+            }
+
+            left++;
+            right--;
+        }
+
+        System.out.println("Valid palindrome: " + palindrome);
+
+        sc.close();
+    }
+}
