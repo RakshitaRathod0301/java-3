@@ -1,0 +1,26 @@
+15. DETECT CAPITAL USE
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a word: ");
+        String word = sc.next();
+
+        int count = 0;
+
+        for (int i = 0; i < word.length(); i++) {
+            if (Character.isUpperCase(word.charAt(i)))
+                count++;
+        }
+
+        boolean result = count == 0 ||
+                         count == word.length() ||
+                         (count == 1 && Character.isUpperCase(word.charAt(0)));
+
+        System.out.println("Correct capital usage: " + result);
+
+        sc.close();
+    }
+}
