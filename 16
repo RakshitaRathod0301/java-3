@@ -1,0 +1,32 @@
+16. REVERSE PREFIX OF WORD
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a word: ");
+        String word = sc.next();
+
+        System.out.print("Enter a character: ");
+        char ch = sc.next().charAt(0);
+
+        int index = word.indexOf(ch);
+
+        if (index == -1) {
+            System.out.println("Result: " + word);
+            return;
+        }
+
+        StringBuilder result = new StringBuilder();
+
+        for (int i = index; i >= 0; i--)
+            result.append(word.charAt(i));
+
+        result.append(word.substring(index + 1));
+
+        System.out.println("Result: " + result);
+
+        sc.close();
+    }
+}
